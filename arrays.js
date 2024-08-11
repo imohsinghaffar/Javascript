@@ -35,7 +35,7 @@ let newArr = [1,2,3,4,5,6];
 
 
 //Slice Create new array of elements from original array
-let arrSlice = newArr.slice(2,5);
-console.log(arrSlice);
+// let arrSlice = newArr.keys(1,2);
+// console.log(arrSlice);
 
 
