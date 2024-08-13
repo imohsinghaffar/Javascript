@@ -22,8 +22,10 @@ let learnObj =
 // console.log(typeof checktype);
 // Object.freeze(learnObj)
 learnObj.class = "Master Student";
-learnObj.greet = function(){console.log("Hello this is anonymous arrow function");
+learnObj.greet = ()=>{console.log("Hello this is anonymous arrow function");
 }
+//Diff between arrow and normal function, in arrow we cannot use this operator
+//while in normal function we can use this. You can see below.
 learnObj.greetTwo = function(){console.log(`Hello Js User! Your age is ${this.age}`);
 }
 console.log(learnObj.greet())
