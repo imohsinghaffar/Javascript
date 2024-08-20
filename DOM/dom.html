@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: rgb(8, 7, 7);
+            color: white;
+            font-size: 25px;
+        }
+        .li-div-0
+        {
+            align-items: center;
+            background-color:brown;
+            padding: 10px;
+            margin: 50px;
+        }
+        .li-div
+        {
+            align-items: center;
+            background-color: green;
+            padding: 30px;
+            margin: 50px;
+        }
+        .li-div li::marker{
+            color: white;
+            font-size: 35px;
+        }
+
+        .li-div-2
+        {
+            align-items: center;
+            background-color:blue;
+            padding: 10px;
+            margin: 50px;
+            height: 400px;
+        }
+
+        .div-2-li-list-1, .div-2-li-list-2
+        {
+            padding: 10px;
+        }
+
+        .div-0-list-items
+        {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading" id="headi" style="text-align: center;">Learning DOM from H.C Sir</h1>
+    <p id="para" class="desc" style="text-align: center;">This is my 2nd time in learning DOM</p>
+
+<p style="text-align: center;">-----------------------------------</p>
+
+
+<div class="li-div-0">
+    <h3 style="text-align: center;">Let's see which selectors we learned tody</h3>
+    <ul class="div-0-ul-li">
+    <li class="div-0-list-items">
+        document.getElementById('id')
+    </li>
+    <li class="div-0-list-items">
+        document.getElementByClassName('ClassName')
+    </li>
+    <li class="div-0-list-items">
+        document.getElementByClassName('ClassName').setAttribute('class', 'Test')
+    </li>
+    <li class="div-0-list-items">
+        document.getElementByClassName('ClassName').getAttribute('id')
+    </li>
+    <li class="div-0-list-items">
+        document.querySelector('.heading')
+    </li>
+    <li class="div-0-list-items">
+        document.querySelectorAll('#id')
+    </li>
+    </ul>
+    </div>
+
+
+<div class="li-div">
+<h3 style="text-align: center;">Let's see difference between innerText and textContent</h3>
+<ul>
+<li>InnerText only show the content which is allowed to display, in some cases
+    if we hide any text using css property textContent will also show that.
+    See example below.
+</li>
+<li id="diffbitandtc">
+    <p>Here is the example of innerText and textContent</p>
+    <p>This is a true example of <span style="display: none;">InnerText and textContent</span></p>
+    <li>Check console to see difference</li>
+</li>
+</ul>
+</div>
+
+
+<div class="li-div-2">
+<h3 style="text-align: center;">Let's see difference between HTMLCollection and nodeList</h3>
+<ul>
+<li class="div-2-li-list-1">
+HTMLCollection and nodeList are both somehow similar to array but not axactly it is array
+if we have to manipulate HTMLCollection we have to convert it in array using
+"Array.from(variable in which we stored HTMLCollection)", in this way HTMLCollection
+will be converted into array then we can easily manipulate it because array allows
+forEach loop.
+</li>
+<li class="div-2-li-list-2">
+Incase of nodeList it allows foreach so we can easily manipulate its forEach
+element easily.
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+<ul class="parent">
+    <li class="day">Monday</li>
+    <li class="day">Tuesday</li>
+    <li class="day">Wednesday</li>
+    <li class="day">Thursday</li>
+    <li class="day">Friday</li>
+    <li class="day">Saturday</li>
+    <li class="day">Sunday</li>
+</ul>
+    <script>
+let checkParent = document.querySelector('.parent')
+//console.log(checkParent.children);
+//console.log(checkParent.children[2].innerHTML);
+
+for(i=0; i<checkParent.children.length; i++)
+{
+    let checkChild = checkParent.children[i].innerHTML;
+   // console.log(checkChild)//here how we can use forloop and retrieve all childrens
+    //parent in HtmlCollection
+}
+
+checkParent.className = "parent main";
+checkParent.id = "123";
+checkParent.setAttribute('title', 'Adding in Parent');
+
+//console.log(checkParent.firstElementChild);
+//console.log(checkParent.lastElementChild.innerHTML);
+
+let getFirstChild = document.querySelector('.day').innerHTML;
+//console.log(getFirstChild.nextElementSibling);
+
+
+let div = document.createElement('div');
+console.log(div);
+div.style.backgroundColor = 'White';
+div.style.color = 'black';
+//div.innerText = 'Learning DOM'; //we don't prefer this way becuase in DSA point of view 
+//it is not good approach instead we can use createTextNode
+let addOnPage = document.createTextNode("Learning DOM JS")
+div.appendChild(addOnPage);
+
+document.body.appendChild(div)
+
+
+
+
+
+
+
+
+
+
+        let getElementwithClass = document.getElementById("para").innerHTML;
+        <!-- console.log(getElementwithClass); -->
+        let getli = document.getElementById('diffbitandtc');
+       // let checkdifference = getli.innerText;
+       let checkdiffagain = getli.textContent;
+        //console.log(checkdiffagain)
+
+
+
+    </script>
+</body>
+</html>
