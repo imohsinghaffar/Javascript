@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove | DOM</title>
+</head>
+<body>
+    <!-- Now we will do using functions -->
+    <ul class="language">    
+    </ul>
+
+    <script>
+        function addLangname(langName)
+        {
+            let createLiElement = document.createElement('li');
+            createLiElement.innerHTML = `${langName}`;
+            document.querySelector('.language').appendChild(createLiElement);
+            createLiElement.style.fontSize = "25px";
+        }
+        //addLangname('Python');
+        //addLangname('Rubby On Rails');
+        //addLangname('Java');
+
+        //There is another way to write same code but optimized
+        function addLanaguge(langName)
+        {
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(langName));
+            document.querySelector('.language').appendChild(li);
+            li.style.fontSize = "25px";
+        }
+
+        addLanaguge("GoLang")
+        addLanaguge("Python")
+        addLanaguge("Rubby")
+        addLanaguge("Swift")
+
+        //Edit - How change any value
+        let secondElement = document.querySelector('li:nth-child(3)');
+        let createNewElement = document.createElement('li');
+        createNewElement.textContent = 'Replaced Element is: Java';
+        secondElement.replaceWith(createNewElement);
+        createNewElement.style.fontSize = "25px";
+
+        //There is another short way of Edit
+        let firstChild = document.querySelector('li:first-child');
+        firstChild.outerHTML = '<li>Changed Language is: React </li>';
+
+        //Remove
+        let lastLang = document.querySelector("li:last-child");
+        console.log(lastLang);
+        lastLang.remove();
+    </script>
+</body>
+</html>
