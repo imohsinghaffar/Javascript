@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynch Project 2</title>
+</head>
+<body>
+    <h1>Second Async JavaScript Project</h1>
+    <button id="firstBtn">start</button>
+    <button id="secBtn">stop</button>
+    <script>
+    
+    let heading = document.querySelector('h1')
+    let firstBtnn = document.querySelector('#firstBtn')
+    let secBtnn = document.querySelector('#secBtn')
+    //console.log(secBtnn)
+    
+
+    let getDate = function(str)
+    {
+        console.log(str, Date.now())
+    }
+
+    
+    let intervalId;
+    firstBtnn.addEventListener('click',function()
+    {
+        if(!intervalId){
+        intervalId = setInterval(getDate, 2000, "Current Date")
+        }
+    })
+
+    secBtnn.addEventListener('click', function()
+    {
+        
+        clearInterval(intervalId)
+        //intervalId=null
+    })
+
+
+
+    </script>
+</body>
+</html>
