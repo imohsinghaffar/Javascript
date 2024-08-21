@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynch Project 1</title>
+</head>
+<body>
+    <h1>First Async JavaScript Project</h1>
+    <button>stop</button>
+
+
+    <script>
+    
+    
+    let handler = function()
+    {
+        document.querySelector('h1').innerHTML = "Learning Async JavaScript";
+    }
+
+    let stopThis = setTimeout(handler, 3000);
+
+    //Now if we want to stop settimeout before showing result 
+    //then we will use clearTimeOut
+    document.querySelector('button').addEventListener('click', function(){
+        clearTimeout(stopThis); //In this way our settimeout won't work.
+        console.log("Stopped!")
+    })
+    
+
+    </script>
+</body>
+</html>
