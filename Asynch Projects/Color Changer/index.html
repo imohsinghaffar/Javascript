@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+</head>
+<style>
+    body{
+        padding: 10px;
+        text-align: center;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+</style>
+<body>
+    <h4>In this Project We will change colors randomly by using DOM and 
+    Events in which we will have two buttons to control.
+    </h4>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+
+    <script>
+
+        let generateRandomColor = function(){
+        const hexa = "123456789ABCDEF";
+        let color = "#";
+            for(i=0; i<6; i++)
+            {
+                color+= hexa[Math.floor(Math.random()*16)];
+            }
+            return color
+        };
+
+
+        let intervalId;
+
+        let getStartBtnId = document.querySelector('#start');
+        getStartBtnId.addEventListener('click', function(){
+        function changeBGColor()
+            {
+                document.body.style.backgroundColor = generateRandomColor()
+            }
+            if(!intervalId){
+                intervalId = setInterval(changeBGColor, 1000)
+                }
+        })
+
+        let getStopBtnId = document.querySelector('#stop');
+        getStopBtnId.addEventListener('click', function(){
+            clearInterval(intervalId)
+            intervalId = null;
+        })
+
+    </script>
+</body>
+</html>
