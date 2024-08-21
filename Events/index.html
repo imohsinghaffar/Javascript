@@ -1,20 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event in JavaScript</title>
+    <style>
+        img{
+            width: 200px !important;
+            height: 200px !important;
+            padding: 30px;
+        }
+    </style>
 </head>
-<body>
-    
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
 
+<body>
+    <div>
+        <ul class="images" id="all-images"> 
+            <!-- Instead Using Onclick in html we should use eventlistners they give
+             us a more features -->
+            <li>
+                <img src="1.jpg" id="f-1" class="img" alt="">
+            </li>
+            <li>
+                <img src="2.jpg" id="f-2" class="img" alt="">
+            </li>
+            <li>
+                <img src="3.jpg" id="f-3" class="img" alt="">
+            </li>
+            <li>
+                <img src="4.jpg" id="f-4" class="img" alt="">
+            </li>
+            <li>
+                <img src="5.jpg" id="f-5" class="img" alt="">
+            </li>
+            <li>
+                <a href="google.com" id="google">Google</a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+       /*
+        let Flower = document.querySelector('#f-4');
+        //console.log(Flower)
+        //there is concept of propagation here, which futher divided into
+        //bulleling event(false value), capturing event(true value).
+        //if we put false it go from down to bottom, first child and then parent
+        //if we put true it goes from top to bottom, parent then child.
+        //but normally we don't use it.
+        // we can also stop this propagation
+        Flower.addEventListener('click', function(e)
+        {
+            //console.log('single li clicked');
+            e.stopPropagation()
+        },true)
+
+
+        let allFlowers = document.querySelector('.images')
+        allFlowers.addEventListener('click', function(e)
+        {
+            //console.log("Main UL Clicked");
+            e.stopPropagation()
+        },true)
+
+        let google = document.querySelector('#google')
+        allFlowers.addEventListener('click', function(e)
+        {
+            e.preventDefault()
+            e.stopPropagation()
+            //console.log("Clicked");
+        },true)
+*/
+        //Now we will see how to remove each element
+        let see = document.querySelector('.images')
+        see.addEventListener('click', function(e)
+        {
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        })
+        //-----------Events that needs to be learn---------------------------
+        //type, timestamp, preventDefault, target, toElement, srcElement
+        //currentTarget, client X, client Y, screen X, screen Y, altkey, crtlkey,
+        //shiftkey, keycode
+
+
+    </script>
 </body>
 </html>
