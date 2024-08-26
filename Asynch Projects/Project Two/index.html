@@ -9,23 +9,38 @@
     <h1>Second Async JavaScript Project</h1>
     <button id="firstBtn">start</button>
     <button id="secBtn">stop</button>
+    <p class="p"></p>
     <script>
     
     let heading = document.querySelector('h1')
     let firstBtnn = document.querySelector('#firstBtn')
     let secBtnn = document.querySelector('#secBtn')
+    let getParagraph = document.querySelector('.p');
     //console.log(secBtnn)
     
+    function addResult(str) {
+        let displayDate = new Date()
+        let localString = displayDate.toLocaleString();
+        let createNewEle = document.createElement('p');
+        createNewEle.innerHTML = `${str, localString}`;
+        getParagraph.appendChild(createNewEle)
+        //console.log(getParagraph)
+        //saveIt.style.fontSize = "25px";
+        //saveIt.style.color = "green";
+        getParagraph.style.fontSize = '25px';
+        getParagraph.style.color = 'Blue';
+    }
 
-    let getDate = function(str)
+    let getDate = function()
     {
-        console.log(str, Date.now())
+        addResult();
     }
 
     
     let intervalId;
     firstBtnn.addEventListener('click',function()
     {
+        if(!intervalId)
         intervalId = setInterval(getDate, 2000, "Current Date")
     })
 
@@ -33,8 +48,11 @@
     {
         
         clearInterval(intervalId)
-        //intervalId=null
+        intervalId=null
     })
+
+
+
 
 
 
