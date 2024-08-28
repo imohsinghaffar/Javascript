@@ -73,9 +73,9 @@ let newpromiseFour = new Promise((resolve, reject)=>{
 async function consumePromise() {
     try {
         let checkResult = await newpromiseFour;
-        console.log(checkResult.username);
+        //console.log(checkResult.username);
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         
     }
     
@@ -83,3 +83,26 @@ async function consumePromise() {
 
 consumePromise() // we have to must call async function otherwise will get error
 
+
+/*
+let arr1 = [1,2,3,4,5];
+let arr2 = [1,6,3,9,5];
+
+let x = 1;
+if(x<arr1.length)
+{                        //2 * 256 = 512 => arr[512]
+    let result = arr2[arr1[x]*0];
+    if(!result)
+    {
+        console.log("You array Indexed doesn't meet the condition!");   
+    }
+    else{
+    console.log(`Condition met, Result is:${result}`);
+    }
+    
+}
+else{
+    console.log("Condition Doesn't fullfill");
+    
+}
+*/
