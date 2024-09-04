@@ -30,12 +30,17 @@
     this.isUserLoggedIn = isUserLoggedIn;
     this.userAge = userAge;
 
-    return this;
+      return this; //If we don't use return keyword then also we can get same results 
  }
 //  const userOne = userDetails()
 //  console.log(userOne);
-let userOne = new userDetails("Mohsin", true, 25);
-//console.log(userOne.username);
+
+//Constructor Function
+let userOne = new userDetails("Ahmad", true, 35);
+let userTwo = new userDetails("Rizwan", false, 32);
+console.log(userOne.username);
+console.log(userTwo);
+
 
 
  
