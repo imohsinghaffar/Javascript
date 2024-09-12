@@ -96,3 +96,62 @@
 // let find = grades.filter((element)=>element>30);
 // console.log(find);
 
+//Task 1: Create a string variable with your name and log it to the console.
+let myName = " Mohsin Ghaffar "
+// console.log(myName);
+
+//Task 2: Find the length of a string and log it to the console.
+let findLength = myName.length
+// console.log(findLength);
+
+//Task 3: Convert a string to uppercase and log it to the console.
+let stringUpperCase = myName.toUpperCase()
+// console.log(stringUpperCase);
+
+//Task 4: Take a string and check if it contains a 
+//specific word (e.g., check if "hello" is in the string).
+if(myName.includes("Ghaffar"))
+{
+        // console.log("True");
+        
+}
+
+//Task 5: Extract the first 5 characters from a string and log it to the console.
+let extract = myName.substring(1,5)
+// console.log(extract);
+
+//Task 6: Concatenate two strings and log the result.
+let fname = "Mohsin"
+let lname = "Ghaffar"
+let fullName = `${fname} ${lname}`
+let Name = fname.concat(lname)
+// console.log(Name);
+// console.log(fullName);
+
+//Task 7: Replace a word in a string with another word and log the result.
+// myName = "Ali"
+// console.log(myName);
+let replaceName = myName.replace("Mohsin", "Hussnain")
+// console.log(replaceName);
+
+
+//Task 8: Trim any extra spaces at the beginning and end of a string.
+let trimMyName = myName.trim()
+console.log(trimMyName);
+// console.log(myName);
+
+//Task 9: Split a string into an array of words (e.g., split a sentence by spaces).
+let newString = "My name is Mohsin"
+let splitIt = newString.split(" ")
+// console.log(splitIt);
+
+//Task 10: Combine an array of words back into a single string.
+let fruits = ["Apple","is", "Sweet"]
+let combine = fruits.join(" ")
+console.log(combine);
+
+
+
+
+
+
