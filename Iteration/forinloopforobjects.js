@@ -16,5 +16,29 @@ let stdObj = {
 for (const keys in stdObj){
     // console.log(keys); //now here it will only print key not values 
     //we have to use this syntax
-    console.log(`key is ${keys} and its value is ${stdObj[keys]}`); //same for arrays
+    // console.log(`key is ${keys} and its value is ${stdObj[keys]}`); //same for arrays
 }
+
+const numbers = [1, 2, 3, 4];
+
+for (const num of numbers) {
+    // console.log(num);
+}
+
+
+const str = "I am learning ForIN";
+
+for (const strValue in str) {
+    // console.log(strValue, str[strValue]);
+}
+
+const book = {
+    title: 'To Kill a Mockingbird',
+    author: 'Harper Lee',
+    year: 1960
+};
+
+for (const key in book) {
+    console.log(`Property: ${key} and Value: ${book[key]}`)        
+    }
+
