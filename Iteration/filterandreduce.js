@@ -67,9 +67,9 @@ let add = arrayForReduce.map((num)=>num + 10)
 //in chaing we can use map, filter together
 
 let getChainValues = arrayForReduce
-.map((num)=>num*10)
-.map((num)=>num+10)
-.filter((num)=>num>50)
+.map((num)=>num*10) //[10,20,30,40,50,60,70,80,90,100]
+.map((num)=>num+10) //[20,30,40,50,60,70,80,90,100,110]
+.filter((num)=>num>50) //[60,70,80,90,100]
 
 // console.log(getChainValues); //This is how chaining works
 
@@ -77,7 +77,11 @@ let getChainValues = arrayForReduce
 const nums = [1,2,3,4,5,6,7,8,9,10];
 let reduceValue = nums.reduce((acc, currentValue)=>
     {
-        console.log(acc, "and", currentValue);
-        return acc+currentValue;
+        // console.log(acc, "and", currentValue);
+        // return acc+currentValue;
     },0);
 // console.log(reduceValue);
+
+let numbers = [1, 2, 3, 4];
+let sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum); // Output: 10
