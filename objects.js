@@ -26,13 +26,140 @@ learnObj.greet = ()=>{console.log("Hello this is anonymous arrow function");
 }
 //Diff between arrow and normal function, in arrow we cannot use this operator
 //while in normal function we can use this. You can see below.
-learnObj.greetTwo = function(){console.log(`Hello Js User! Your age is ${this.age}`);
+// learnObj.greetTwo = function(){console.log(`Hello Js User! Your age is ${this.age}`);
+// }
+// console.log(learnObj.greet())
+// console.log(learnObj.greetTwo());
+// console.log(learnObj);
+let mySymbol = Symbol['mySymb'] //this is correct example we have
+let myObj = {
+    [mySymbol]: "Let's Greet" // <--- if we have to access and use symbol correctly
+    //then we have to must use brackets while assigning new value
 }
-console.log(learnObj.greet())
-console.log(learnObj.greetTwo());
-console.log(learnObj);
 
+// console.log(myObj[mySymbol]); //Like this we will access it, with dot notation
+//we cannot access it.
 
+let myObject = {
+    std_name: "Ahmad",
+    std_age: 26,
+    std_gender: "Male",
+    newObj:{
+        address: "Wurzburg",
+        houseNum: "1410",
+        building: "16A"
+    }
+}
 
+let getAllKeys = Object.entries(myObject).forEach(([key, value])=>{
+    // console.log(`Key is ${key} and value is ${value}`);
+    
+})
+// console.log(getAllKeys);
+
+//Task: Add a new property genre to the book object. 
+//Then, modify the year property to a different value.
+myObject.isLoggedIn = true;
+// console.log(myObject);
+
+//Task: Delete the any property from the book object and log the object to see the changes.
+delete myObject.std_age
+// console.log(myObject);
+
+//Task: Use Object.keys() to iterate over the properties of the 
+//book object and log each key and its corresponding value.
+// Object.keys(myObject).forEach(keys=>console.log(keys))
+
+//Task: Create an object representing a person with nested objects 
+//for address and contacts. Log the entire object and specific nested properties.
+// console.log(myObject.newObj.address)
+
+//Task: Create two objects and merge them into a new object 
+//using Object.assign(). Log the merged object.
+let infObj = {
+    qual:"Master",
+    uni:"Wzg",
+    dept: "CS"
+}
+
+let combineObj = Object.assign({}, myObject, infObj)
+// console.log(combineObj);
+
+                        //object destructuring
+//Task: Use object destructuring to extract properties name and age from the person 
+//object created earlier and log them.
+let {uni:University, qual:Qualification} = infObj
+// console.log(University, Qualification);
+
+//Task: Create a base object and use Object.create() to inherit its properties
+//in a new object. Log the inherited properties.
+let getStdInfo = Object.create(infObj) //this way create new object using previous obj but
+//don't merge new object in old object
+getStdInfo.location = "Am Hubland near Mensa"
+// console.log(getStdInfo);
+// console.log(infObj);
+
+//Task: Use Object.assign() and the spread operator (...) to copy an object. 
+//Modify the copy without affecting the original object.
+
+let getObj = {...infObj}
+// console.log(getObj);
+
+let numbers = [1, 2, 3,6,7];
+
+function sum(x, y, z,a) {
+    return x + y + z + a;
+}
+
+// Spreading the array as individual arguments
+// console.log(sum(...numbers)); // Output: 12
+
+//Object.assign() and spread both combines two or more objects and give combine result
+
+//Task: Use hasOwnProperty() to check if an object contains a 
+//specific property. Log the result.
+let seeResult = getStdInfo.hasOwnProperty("location")
+// console.log(seeResult);
+
+//Task: Create an object with multiple properties and use Object.getOwnPropertyDescriptors() to retrieve 
+//detailed information about the properties. 
+//Log the descriptors.
+let seeHiddenValues = Object.getOwnPropertyDescriptors(infObj)
+// console.log(seeHiddenValues);
+
+//Task: Create an object that represents a calculator with methods 
+//to perform basic arithmetic operations like add, subtract, multiply, and divide.
+let Calculate = {
+    add(a,b)
+    {
+        // return a + b
+        console.log(a + b);
+        
+    },
+    sub(a,b)
+    {
+        // return a - b
+        console.log(a - b);
+    },
+    mult(a,b)
+    {
+        // return a * b
+        console.log(a * b);
+    },
+    divide(a,b)
+    {
+        // return a / b
+        console.log(a / b);
+    }
+}
+
+// console.log(Calculate.add(1,2));
+// console.log(Calculate.sub(5,2));
+// console.log(Calculate.mult(10,2));
+// console.log(Calculate.divide(22, 11));
+// Calculate.add(5, 9)
+// Calculate.sub(5, 9)
+// Calculate.mult(5, 9)
+// Calculate.divide(5, 9)
 
 
