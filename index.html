@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For all things</title>
-    <script src="./destructuring.js"></script>
-    <style>
-        body{
-            background-color: lightslategray;
-        }
-    </style>
+    
 </head>
 <body>
-    <h1>Destructuring</h1>
+    <h1>DOM</h1>
+    <a href="google.com" id="a1">Google</a>
+    <a href="facebook.com">facebook</a>
+    <a href="mdn.com">mdn</a>
+    <a href="procodrr.com">procodrr</a>
+    <a href="youtube.com">Youtube</a>
+
+    <script>
+        let getAllAchorTag = document.querySelectorAll('a');
+        for(let i=0;i<getAllAchorTag.length;i++)
+        {
+            getAllAchorTag[i].style.color = 'teal';
+            if(getAllAchorTag[i].innerText=="facebook")
+            {
+                getAllAchorTag[i].style.color='blue'
+                console.log(getAllAchorTag[i].innerText + ","+ 'Yes this exists')
+            }
+        }
+    </script>
 </body>
 </html>
