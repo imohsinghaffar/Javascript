@@ -1,23 +1,30 @@
-let Inputfield = document.querySelector('.in-1');
-let getSubmitBtn = document.querySelector('.in-2')
-let finaldata = document.querySelector('.new-data')
+let getInputValue = document.querySelector('.text');
+let getSubmittBtn = document.querySelector('.btn')
+let saveListItem  = document.querySelector('.list-item');
+let showDeleteBtn  = document.querySelector('.delete-btn');
 
-getSubmitBtn.addEventListener('click', ()=>{
-    let checkvalue = Inputfield.value.toUpperCase();
-    let createNewelem = document.createElement('li')
-    // let storeValue = finaldata.innerHTML
-    createNewelem = checkvalue
-    // storeValue = checkvalue
-    finaldata.appendChild(createNewelem.innerHTML)
-})
 
-// let getfromh3 = document.querySelector('.calc').innerText;
-// console.log(getfromh3);
+getSubmittBtn.addEventListener('click',createElement)
 
-// let btn = document.querySelector('button');
-// btn.innerHTML = "Minus";
+function createElement()
+{
+    let inputValue = getInputValue.value;
+    if(inputValue){
+    let createList = document.createElement('li');
+    createList.innerHTML = inputValue;
+    createList.setAttribute('class','new-list')
+    saveListItem.appendChild(createList)
+    let createDeletebtn = document.createElement('button');
+    createDeletebtn.innerHTML = "Delete";
+    createDeletebtn.setAttribute('class','new-btn')
+    showDeleteBtn.appendChild(createDeletebtn)
 
-// btn.addEventListener('cilck', ()=>{
-//     getfromh3 = 5
-// })
+    createDeletebtn.addEventListener('click',()=>
+    {
+
+        saveListItem.removeChild(createList)
+        showDeleteBtn.removeChild(createDeletebtn)
+    })
+    }
+}
 
