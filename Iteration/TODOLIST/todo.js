@@ -22,8 +22,8 @@ function createElement()
     createDeletebtn.addEventListener('click',()=>
     {
 
-        saveListItem.removeChild(createList)
-        showDeleteBtn.removeChild(createDeletebtn)
+        saveListItem.remove(createList)
+        showDeleteBtn.remove(createDeletebtn)
     })
     }
 }
