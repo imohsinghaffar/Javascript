@@ -10,16 +10,16 @@ function createElement()
 {
     let inputValue = getInputValue.value;
     if(inputValue){
-    let createList = document.createElement('li');
-    createList.innerHTML = inputValue;
-    createList.setAttribute('class','new-list')
-    saveListItem.appendChild(createList)
-    let createDeletebtn = document.createElement('button');
-    createDeletebtn.innerHTML = "Delete";
-    createDeletebtn.setAttribute('class','new-btn')
-    showDeleteBtn.appendChild(createDeletebtn)
+        let createList = document.createElement('li');
+        createList.innerHTML = inputValue;
+        createList.setAttribute('class','new-list')
+        saveListItem.appendChild(createList)
+        let createDeletebtn = document.createElement('button');
+        createDeletebtn.innerHTML = "Delete";
+        createDeletebtn.setAttribute('class','new-btn')
+        showDeleteBtn.appendChild(createDeletebtn)
 
-    createDeletebtn.addEventListener('click',()=>
+        createDeletebtn.addEventListener('click',()=>
     {
 
         saveListItem.remove(createList)
