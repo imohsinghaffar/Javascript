@@ -19,3 +19,6 @@ function CreateUser(username, email, passw)
 //new keyword creating new object of our function createuser
 let checkResult = new CreateUser("Mohsin", "mohsin@gmail.com", 123) 
 console.log(checkResult);
+
+//Additional Details
+//whenever we use fetch, hmlhttprequest, axios, setttimeout, setinterval,
