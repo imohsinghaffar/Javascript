@@ -163,3 +163,44 @@ let Calculate = {
 // Calculate.divide(5, 9)
 
 
+//Object literals 1st way
+// let name = "Student";
+// let obj = {
+//     name,
+//     age:25
+// }
+
+//Object literals : 2nd way
+// let name = "Student";
+// let obj = {
+//     [name + "Name"]:"Mohsin Ghaffar", //in this way we can combine two variable as one
+//     age:25
+// }
+// console.log(obj.StudentName);
+
+//Object literals 3rd way: In this way we will see how to use function accor to ES6
+let name = "Student";
+let obj = {
+    [name + "Name"]:"Mohsin Ghaffar", //in this way we can combine two variable as one
+    age:25,
+    details()
+    {
+        // console.log(this.StudentName); //ES6 allows us to create function like this
+        //before ES6 we have to write function like this
+        //details: function(){}
+        return `Your name is ${this.StudentName}`
+    }
+}
+// console.log(obj.details());
+
+//this is how a function return object
+let fname = "Mohsin";
+let lname = "Ghaffar";
+function student(firstname, surname)
+{
+    return {firstname, surname};
+}
+
+// console.log(student(fname, lname))
+let show = student(fname, lname);
+// console.log(show);
