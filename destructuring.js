@@ -35,5 +35,56 @@ function arrDesFunc([name1,name2])  //for arrays in functions
     // console.log(`Name 1: ${name1} - Name 2: ${name2}`);
 }
 arrDesFunc(arr)
+////////////////////////////////////////
+///////////////////////////////////////
+//////////////////////////////////////
+///////////Objects Destructuring
+
+const objDes = { name: 'Alice', userage: 25 };
+
+// Destructuring with renaming
+const {name, userage} = objDes;
+
+// console.log(name);  // "Alice"
+// console.log(userage);  // 25
 
 
+
+
+///////////Arrays Destructuring
+
+// const array = ['Alice', "Jhon", "Ali" ];
+
+// // Destructuring with renaming
+// const [a,,c] = array;
+// console.log(z);  // "Alice"
+// // console.log(userage);  // 25
+
+
+const arrobj = {
+   user: { username : "Public", id : 1},
+   arr : [1,2,3,4]
+}
+  
+  // Destructuring objects and arrays together
+//   const [{ name:fnanme, age:yearold }, [x, y]] = arrobj;
+// let {user : {username,id}, arr:[a,b,c,d]} = arrobj
+  
+// console.log(c);
+
+
+////////////////////////
+///////////////////////Practice///////////////////
+
+const arr1 = [
+    { name: 'Tom', age: 22 },
+    { name: 'Jerry', age: 24 }
+  ];
+  let[firstobj,secondobj] = arr1
+ let{name:name1, age:age1} = firstobj;
+ let{name:name2, age:age2} = secondobj;
+ console.log(age1);
+ 
+  
+  
+  
