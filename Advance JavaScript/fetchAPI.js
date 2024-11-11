@@ -18,6 +18,7 @@
 // })
 
 //Async code is used in these cases:
+
 //fetch, XMLHttpRequest, axios,promises, setttimeout, setinterval
 //When these run in result of these callback, then catch, async await 
 
