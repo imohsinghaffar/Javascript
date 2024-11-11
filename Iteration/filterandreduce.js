@@ -82,6 +82,74 @@ let reduceValue = nums.reduce((acc, currentValue)=>
     },0);
 // console.log(reduceValue);
 
-let numbers = [1, 2, 3, 4];
-let sum = numbers.reduce((total, num) => total + num, 0);
-console.log(sum); // Output: 10
+// let numbers = [1, 2, 3, 4];
+// let sum = numbers.reduce((total, num) => total + num, 0);
+// console.log(sum); // Output: 10
+
+// ---------------------Filter Tasks---------------------------
+// Task 1
+// Output: [2, 4, 6, 8, 10]
+const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let see = num.filter(evenNo=>evenNo%2==0)
+// console.log(see);
+
+// Task2
+// Output: [1, 3, 5, 7, 9]
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let findOdd = numbers.filter(odd => odd%2==1)
+// console.log(findOdd);
+
+//Task3
+// Output: ['apple', 'grape']
+let words = ['apple', 'banana', 'cherry', 'date', 'grape'];
+const substring = 'ap';
+// let findFruit = words.filter((fruit, index) => index===0 || index===1)
+let findSubString = words.filter(data=>data.includes(substring)) //Find SubString
+// console.log(findSubString);
+
+
+// Task
+// Output: [{ name: 'Jane', age: 35 }, { name: 'Bill', age: 40 }]
+const people = [
+    { name: 'John', age: 25 },
+    { name: 'Jane', age: 35 },
+    { name: 'Bill', age: 40 },
+    { name: 'Alice', age: 28 }
+  ];
+
+  let findPeople = people.filter(isAge => isAge.age>30)
+//   console.log(findPeople);
+
+  //Task
+  // Output: [1, 2, 3, 4, 5, 6, 7]
+  const numbers = [1, 2, 2, 3, 4, 5, 1, 6, 7, 4];
+  let findUniqueNo = numbers.filter((value, index, self) =>{
+    return self.indexOf(value) === index;
+  })  
+  
+//   console.log(findUniqueNo);
+
+// Task
+// Output: [199, 349, 450]
+const prices = [199, 50, 349, 25, 450, 120];
+let findNo = prices.filter(num=> {
+    return num >= 199
+})
+// console.log(findNo);
+
+// Task: Filter only elements which have any value
+// Output: ['apple', 'banana', 'cherry']
+const strings = ['apple', '', 'banana', ' ', 'cherry'];
+let removeSpace = strings.filter(remove => remove.trim()!=="")
+// console.log(removeSpace);
+
+// Task
+const number = [5, 10, 15, 20, 25, 30];
+const lowerBound = 10;
+const upperBound = 25;
+let checkNo = number.filter(num => num>=lowerBound && num<=upperBound)
+console.log(checkNo);
+
+
+
+  
