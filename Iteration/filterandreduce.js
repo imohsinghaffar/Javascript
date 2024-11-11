@@ -148,8 +148,30 @@ const number = [5, 10, 15, 20, 25, 30];
 const lowerBound = 10;
 const upperBound = 25;
 let checkNo = number.filter(num => num>=lowerBound && num<=upperBound)
-console.log(checkNo);
+// console.log(checkNo);
 
 
 
-  
+// Output: ["Bret", "Antonette", "Samantha"]
+const users = [
+    { id: 1, username: "Bret", email: "Sincere@april.biz" },
+    { id: 2, username: "Antonette", email: "Shanna@melissa.tv" },
+    { id: 3, username: "Samantha", email: "Nathan@yesenia.net" }
+  ];
+const usernames = users.map(u => u.email);
+// console.log(usernames);
+
+const products = [
+  { id: 1, name: "Laptop", price: 800 },
+  { id: 2, name: "Phone", price: 600 },
+  { id: 3, name: "Tablet", price: 400 }
+];
+
+const productDetails = products.map(product => {
+  return {...product,discountedPrice: product.price * 0.9 // applying 10% discount
+};
+});
+
+// console.log(productDetails);
+
+
