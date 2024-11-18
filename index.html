@@ -4,27 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For all things</title>
-    
+    <script src="test.js" defer></script>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .todo
+        {
+            text-align: center;
+            background-color: rgb(114, 103, 204);
+            border-radius: 5px;
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-top: 40px;
+        }
+        .todo-body h1
+        {
+            font-family:sans-serif;
+            font-size: 30px;
+            padding-top: 20px;
+            color: white;
+        }
+        .todo .main-content
+        {
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .todo .todo-icon
+        {
+            width: 100px;
+            height: 100px;
+            align-items:normal;
+        }
+        .todo .input
+        {
+            padding: 18px 22px;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;    
+        }
+        .todo .btn
+        {
+            padding: 18px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: 600px;
+            cursor: pointer;
+            margin-left: 5px;
+            background-color: #0795fe;
+            color: white;
+        }
+        
+        .ul
+        {
+            text-align: center;
+        }
+        .li-style
+        {
+            width: fit-content;
+            height: 30px;
+            padding-left: 40px; /* Space for the image */
+            background-size: 30px 30px; /* Adjust width and height */
+            background-repeat: no-repeat; /* Prevent repeating */
+            background-position: left center; /* Position the image */
+            list-style: none;
+            background-image: url('check2.png');
+        }
+        .newEle
+        {
+            text-align: center;
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+            padding: 15;
+            margin:20px 50px;
+            width: auto;
+            font-size: 24px;
+            font-weight: 600px;
+            background-color: aliceblue;
+        }
+        .newEle .delBtn
+        {
+            padding: 12px 20px;
+            background-color: red;
+            font-size: 20px;
+            color:white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>DOM</h1>
-    <a href="google.com" id="a1">Google</a>
-    <a href="facebook.com">facebook</a>
-    <a href="mdn.com">mdn</a>
-    <a href="procodrr.com">procodrr</a>
-    <a href="youtube.com">Youtube</a>
-
-    <script>
-        let getAllAchorTag = document.querySelectorAll('a');
-        for(let i=0;i<getAllAchorTag.length;i++)
-        {
-            getAllAchorTag[i].style.color = 'teal';
-            if(getAllAchorTag[i].innerText=="facebook")
-            {
-                getAllAchorTag[i].style.color='blue'
-                console.log(getAllAchorTag[i].innerText + ","+ 'Yes this exists')
-            }
-        }
-    </script>
+<div class="todo">
+    <div class="todo-body">
+        <h1>Add Your Tasks</h1>
+        <div class="main-content">
+            <img src="done.png" alt="Todo" class="todo-icon">
+            <input class="input" type="text">
+            <input type="submit" name="" class="btn">
+        </div>
+    </div>
+</div>
+<ul class="ul">
+</ul>
 </body>
 </html>

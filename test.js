@@ -108,19 +108,18 @@ input2.map(ele => {
 console.log(sumarr);
 
 
-let books = 
-[
-    { title: "Book A", available: true },
-    { title: "Book B", available: false },
-    { title: "Book C", available: true }
-  ]
-  books.forEach(bk=>
-  {
-    if(bk.available==true){
-        console.log(bk.title); 
+let books =
+    [
+        { title: "Book A", available: true },
+        { title: "Book B", available: false },
+        { title: "Book C", available: true }
+    ]
+books.forEach(bk => {
+    if (bk.available == true) {
+        console.log(bk.title);
     }
-  })
-  
+})
+
 
 //Task 5: Reduce with Filter
 //Given an array of numbers, filter out all negative numbers and calculate the 
@@ -132,11 +131,9 @@ let books =
 
 let numArr = [-5, 10, -2, 20, -3, 30];
 let sum = 0
-numArr.filter(num =>
-{
-    if(num>0)
-    {
-        sum+=num;
+numArr.filter(num => {
+    if (num > 0) {
+        sum += num;
     }
 })
 console.log(sum);
@@ -149,13 +146,10 @@ console.log(sum);
 // Output: "watermelon"
 
 let fruitArr = ["apple", "watermelon", "banana", "cherry"];
-function longest(Array)
-{
+function longest(Array) {
     let empArr = "";
-    for(let i=0;i<Array.length;i++)
-    {
-        if(Array[i].length>empArr.length)
-        {
+    for (let i = 0; i < Array.length; i++) {
+        if (Array[i].length > empArr.length) {
             empArr = Array[i];
         }
     }
@@ -171,15 +165,107 @@ async function fetchData() {
     let APIHere = await fetch("https://jsonplaceholder.typicode.com/posts");
     let getJSONData = await APIHere.json();
     return getJSONData;
-    
+
 }
 fetchData()
-.then(data=>{
-        for(let i=0; i<5;i++)
-        {
-            console.log(data[i].title);
+    .then(data => {
+        for (let i = 0; i < 5; i++) {
+            // console.log(data[i].title);
         }
+    })
+    .catch(error => {
+        console.log(error);
+    })
+//-------------------------------------------------
+// Task: Fetch User Information and Filter
+// Description:
+// Write an async function that fetches data from https://jsonplaceholder.typicode.com/users. 
+//Extract and log the names of users who live in a city starting with the letter 'S'.
+async function fetchUserInfo() {
+    let API = await fetch("https://jsonplaceholder.typicode.com/users");
+    let getUserJSON = await API.json();
+    return getUserJSON;
+}
+fetchUserInfo()
+    .then(data => {
+        data.filter(user => {
+            // console.log(user.address.city);
+            if (user.address.city.startsWith('S')) {
+                console.log(`Name: ${user.name}`);
+            }
+        })
+    })
+    .catch(error => {
+        console.log(error.message);
+    })
+
+//Promises
+// Task 4: Simple Promise
+// Create a function that returns a promise. If a random number is greater than 0.5, 
+// resolve the promise with "Success". Otherwise, reject it with "Failure".
+function learnPromise() {
+    let randomNum = Math.random().toFixed(2);
+    console.log(randomNum);
+
+    let newPr = new Promise((resolve, reject) => {
+        if (randomNum > 0.5) {
+
+            resolve("Success")
+        }
+        else {
+            reject("Failure");
+        }
+    })
+    newPr.
+        then(data => {
+            console.log(data);
+
+        })
+        .catch(error => {
+            console.log(error);
+        })
+}
+learnPromise()
+//----------------------------
+//index.html
+// Task 8: Todo List
+// Build a simple to-do list where:
+// You can add new items.
+// You can remove an item by clicking on it.
+let getInput = document.querySelector(".input");
+let btnClick = document.querySelector(".btn");
+let accessUl = document.querySelector('.ul');
+function todo() {
+    if (getInput.value) {
+        let createlist = document.createElement("li");
+        createlist.innerHTML = getInput.value.toUpperCase();
+        createlist.setAttribute("class", "li-style newEle");
+        accessUl.appendChild(createlist)
+
+        let deleteBtn = document.createElement('button');
+        deleteBtn.innerHTML = 'Delete';
+        deleteBtn.setAttribute('class','delBtn')
+
+        createlist.appendChild(deleteBtn);
+        getInput.value = "";
+
+        deleteBtn.addEventListener('click', () => {
+            accessUl.removeChild(createlist);
+            if(deleteBtn.event.key==="mouseover")
+            {
+                document.write("Success");
+            }
+        })
+
+    } else {
+        alert("There is something wrong!");
+    }
+}
+
+btnClick.addEventListener("click", todo)
+getInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        todo()
+    }
 })
-.catch(error=>{
-    console.log(error);
-})
+
